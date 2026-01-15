@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>善意的竞争 - 首页</title>
+    <link rel="stylesheet" href="../2.css">
+     <style>
+        /* 轮播容器样式 */
+        .banner {
+            position: relative;
+            width:100%;
+            height: 500px; /* 可根据图片比例调整 */
+            overflow: hidden;
+        }
+        .banner-slide {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .banner-item {
+            min-width: 100%;
+            height: 100%;
+        }
+        .banner-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 保持图片比例，填充容器 */
+        }
+        /* 轮播左右箭头 */
+        .banner-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0,0,0,0.3);
+            color: #ffffff;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%;
+        }
+        .arrow-left {
+            left: 20px;
+        }
+        .arrow-right {
+            right: 20px;
+        }
+        /* 轮播小圆点指示器 */
+        .banner-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.5);
+            cursor: pointer;
+        }
+        .dot.active {
+            background-color: #00e5ff;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="./1.jpg" alt="善意的竞争Logo">
+                <span class="logo-text">善意的竞争</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="./sy.html">首页</a ></li>
+                <li><a href="../js/js.html">角色介绍</a ></li>
+                <li><a href="../pd/pd.html">精彩片段</a ></li>
+                <li><a href="../mh/mh.html">幕后花絮</a ></li>
+                <li><a href="../zb/zb.html">周边推荐</a ></li>
+                <li><a href="../../index.html">登录</a ></li>
+                <li><a href="../lx/lx.html">联系我们</a ></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--公告栏-->
+    <div class="scroll-announce">
+       <div class="scroll-content">
+      📢 公告1：网站维护时间于每天的 00:00-06:00 | 公告2：蓝光已上线，超多幕后花絮，还有机会抽未公开拍立得！欢迎选购！ | 公告3：第二季正在筹备中，请多多留言，我们会积极进行答复并采纳！！！
+       </div>
+    </div>
+
+    <!-- 内容区 -->
+    <div class="container">
+            <!-- 轮播 -->
+    <div class="banner">
+        <div class="banner-slide">
+            <div class="banner-item">
+                <img src="./s1.jpg" alt="轮播图1" class="zoom-img">
+            </div>
+            <div class="banner-item">
+                <img src="./s2.jpg" alt="轮播图2" class="zoom-img">
+            </div>
+            <div class="banner-item">
+                <img src="./s3.jpg" alt="轮播图3" class="zoom-img">
+            </div>
+        </div>
+        <!-- 左右切换箭头 -->
+        <div class="banner-arrow arrow-left">&lt;</div>
+        <div class="banner-arrow arrow-right">&gt;</div>
+        <!-- 小圆点指示器 -->
+        <div class="banner-dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+        <h1 class="page-title">善意的竞争</h1>
+        <h2 class="section-title">作品简介</h2>
+        <p>《善意的竞争》是由STUDIOX+U出品及企划，
+Wirelab Flex,STUDIO X+U共同制作，金泰熙执导，金泰熙，闵艺智共同编剧，李惠利，郑受彬，姜惠元，吴友利等主演的韩国校园惊悚剧。
+
+该剧改编自宋彩允，沈在英创作的同名网络漫画，讲述禹瑟琪父亲意外去世后，转学到了首尔名门女子高中，与全校第一名的风云人物刘在伊成为朋友后发生一系列惊悚的故事。
+
+《善意的竞争》于2025年2月10日在U+Mobile TV,U+TV上线播出，每周一至四更新，全16集。</p >
+        
+        <h2 class="section-title">作品亮点</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>校园</h3>
+                <p>在韩国顶尖女高里，从竞争到联手的复杂故事，揭露了教育体系下的阶级，霸凌和人性异化。</p >
+            </div>
+            <div class="card">
+                <h3>悬疑剧情</h3>
+                <p>嗑药、自残、成绩篡改...直击韩国高考黑幕。</p >
+            </div>
+            <div class="card">
+                <h3>个性角色</h3>
+                <p>刘在伊，禹瑟琪，朱艺莉，崔京等角色形象鲜明，让人印象深刻。</p >
+            </div>
+            <div class="card">
+                <h3>意义</h3>
+                <p>通过悬疑和惊悚的外壳，深刻探讨了韩国教育的内卷，阶级固化和女性困境，角色之间的"善意竞争"实则是权力规则下的镜像博弈。</p >
+            </div>
+        </div>
+        <h2 class="section-title">角色介绍</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="./lzy.jpg" alt="刘在伊" class="card-img">
+                <h3>刘在伊</h3>
+                <p>完美面具下的破碎灵魂</p >
+            </div>
+            <div class="card">
+                <img src="./ysq.jpg" alt="禹瑟琪" class="card-img">
+                <h3>禹瑟琪</h3>
+                <p>底层挣扎的坚韧猎手</p >
+            </div>
+            <div class="card">
+                <img src="./zyl.jpg" alt="朱艺莉" class="card-img">
+                <h3>朱艺莉</h3>
+                <p>虚荣与真实的双面人生</p >
+            </div>
+            <div class="card">
+                <img src="./cj.jpg" alt="崔京" class="card-img">
+                <h3>崔京</h3>
+                <p>清醒的旁观者与信息的集散地</p >
+            </div>
+        </div>
+        <h2 class="section-title">精彩片段</h2>
+        <div class="card-container">
+            <div class="card">
+                <video class="card-video" controls poster="../pd/TT.png">
+                    <source src="../pd/TT.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+                <h3>天台</h3>
+            </div>
+            <div class="card">
+                <video class="card-video" controls poster="../pd/PPC.png">
+                    <source src="../pd/PPC.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+                <h3>泡泡池</h3>
+            </div>
+            <div class="card">
+                <video class="card-video" controls poster="../pd/K.png">
+                    <source src="../pd/KTV.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+                <h3>ktv</h3>
+            </div>
+            <div class="card">
+                <video class="card-video" controls poster="../pd/yh.png">
+                    <source src="../pd/YH.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+                <h3>烟花</h3>
+            </div>
+        </div>
+        <h2 class="section-title">幕后花絮</h2>
+        <div class="card-container">
+            <div class="card">
+                <video class="card-video" controls poster="../mh/lzy.jpg">
+                    <source src="../mh/lzy.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+                <h3>花絮1</h3>
+            </div>
+            <div class="card">
+                <video class="card-video" controls poster="../mh/ysq.jpg">
+                    <source src="../mh/ysq.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+                <h3>花絮2</h3>
+            </div>
+            <div class="card">
+                <video class="card-video" controls poster="../mh/zyl.jpg">
+                    <source src="../mh/zyl.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+                <h3>花絮3</h3>
+            </div>
+            <div class="card">
+                <video class="card-video" controls poster="../mh/cj.jpg">
+                    <source src="../mh/cj.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+                <h3>花絮4</h3>
+            </div>
+        </div>
+        <h2 class="section-title">周边推荐</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="../zb/lg.jpg" alt="蓝光" class="card-img">
+                <h3>蓝光</h3>
+                <div class="dimsum-price">¥1299</div>
+            </div>
+            <div class="card">
+                <img src="../zb/jbj.jpg" alt="剧本集" class="card-img">
+                <h3>剧本集</h3>
+                <div class="dimsum-price">¥129</div>
+            </div>
+            <div class="card">
+                <img src="../zb/zpj.jpg" alt="照片集" class="card-img">
+                <h3>照片集</h3>
+                <div class="dimsum-price">¥199</div>
+            </div>
+            <div class="card">
+                <img src="../zb/xsz.jpg" alt="学生证1套" class="card-img">
+                <h3>学生证1套</h3>
+                <div class="dimsum-price">¥99</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>善意的竞争 &copy; 2025 &copy; 黎芷柔</p >
+        <p>电子邮件：3060677004@qq.com</p >
+        <p>地址：***********</p >
+    </footer>
+    <script src="../123.js"></script>
+</body>
+</html>

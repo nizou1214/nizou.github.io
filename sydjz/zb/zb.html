@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>善意的竞争 - 周边推荐</title>
+    <link rel="stylesheet" href="../2.css">
+     <style>
+        /* 给导航容器加相对定位，作为购物车图标的定位参考 */
+        .nav-container {
+            position: relative;
+        }
+        /* 购物车图标样式 - 改为绝对定位，基于导航容器 */
+        .cart-icon {
+            position: absolute;
+            top: 100%; /* 紧贴导航栏底部 */
+            right: 0; /* 保持右对齐 */
+            width: 50px;
+            height: 50px;
+            background-color: #ff6700;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 35px;
+            cursor: pointer;
+            z-index: 99;
+            text-decoration: none;
+            margin-top: 70px; /* 可选：和导航栏拉开一点距离 */
+        }
+        /* 添加到购物车按钮样式 */
+        .add-to-cart {
+            margin-top: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%; /* 50%实现圆形 */
+            background-color: #00bfffdf;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .add-to-cart:hover {
+            background-color: #ff9500;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="./1.jpg" alt="善意的竞争Logo">
+                <span class="logo-text">善意的竞争</span>
+            </div>
+            <!-- 购物车图标放在导航容器内，才能基于导航定位 -->
+            <a href="./gwc/gwc.html" class="cart-icon">🛒</a >
+            <ul class="nav-menu">
+                <li><a href="../sy/sy.html">首页</a ></li>
+                <li><a href="../js/js.html">角色介绍</a ></li>
+                <li><a href="../pd/pd.html">精彩片段</a ></li>
+                <li><a href="../mh/mh.html">幕后花絮</a ></li>
+                <li><a href="./zb.html">周边推荐</a ></li>
+                <li><a href="../../index.html">登录</a ></li>
+                <li><a href="../lx/lx.html">联系我们</a ></li>
+            </ul>
+        </div>
+    </nav>
+
+        <!--公告栏-->
+    <div class="scroll-announce">
+       <div class="scroll-content">
+      📢 公告1：网站维护时间于每天的 00:00-06:00 | 公告2：蓝光已上线，超多幕后花絮，还有机会抽未公开拍立得！欢迎选购！ | 公告3：第二季正在筹备中，请多多留言，我们会积极进行答复并采纳！！！
+       </div>
+    </div>
+
+    <div class="container">
+        <h1 class="page-title">周边推荐</h1>
+       
+        <div class="card-container">
+            <div class="card">
+                <img src="./lg.jpg" alt="蓝光" class="card-img">
+                <h3>蓝光</h3>
+                <div class="dimsum-price">¥1299</div>
+                <button class="add-to-cart" onclick="addToCart('蓝光', 1299)">🛒</button>
+            </div>
+            <div class="card">
+                <img src="./jbj.jpg" alt="剧本集" class="card-img">
+                <h3>剧本集</h3>
+                <div class="dimsum-price">¥129</div>
+                <button class="add-to-cart" onclick="addToCart('剧本集', 129)">🛒</button>
+            </div>
+            <div class="card">
+                <img src="./zpj.jpg" alt="照片集" class="card-img">
+                <h3>照片集</h3>
+                <div class="dimsum-price">¥199</div>
+                <button class="add-to-cart" onclick="addToCart('照片集', 199)">🛒</button>
+            </div>
+            <div class="card">
+                <img src="./xsz.jpg" alt="学生证1套" class="card-img">
+                <h3>学生证1套</h3>
+                <div class="dimsum-price">¥99</div>
+                <button class="add-to-cart" onclick="addToCart('学生证1套', 99)">🛒</button>
+            </div>
+            <div class="card">
+                <img src="./sjl.jpg" alt="手机链" class="card-img">
+                <h3>手机链</h3>
+                <div class="dimsum-price">¥119</div>
+                <button class="add-to-cart" onclick="addToCart('手机链', 119)">🛒</button>
+            </div>
+            <div class="card">
+                <img src="./bd.jpg" alt="笔袋" class="card-img">
+                <h3>笔袋</h3>
+                <div class="dimsum-price">¥109</div>
+                <button class="add-to-cart" onclick="addToCart('笔袋', 109)">🛒</button>
+            </div>
+            <div class="card">
+                <img src="./hzb.jpg" alt="化妆包" class="card-img">
+                <h3>化妆包</h3>
+                <div class="dimsum-price">¥129</div>
+                <button class="add-to-cart" onclick="addToCart('化妆包', 129)">🛒</button>
+            </div>
+            <div class="card">
+                <img src="./yjh.jpg" alt="眼镜盒" class="card-img">
+                <h3>眼镜盒</h3>
+                <div class="dimsum-price">¥109</div>
+                <button class="add-to-cart" onclick="addToCart('眼镜盒', 109)">🛒</button>
+            </div>
+            <div class="card">
+                <img src="./zpzb.jpg" alt="照片周边套装" class="card-img">
+                <h3>照片周边套装</h3>
+                <div class="dimsum-price">¥159</div>
+                <button class="add-to-cart" onclick="addToCart('照片周边套装', 159)">🛒</button>
+            </div>
+            <div class="card">
+                <img src="./xh.jpg" alt="校徽徽章" class="card-img">
+                <h3>校徽徽章</h3>
+                <div class="dimsum-price">¥69</div>
+                <button class="add-to-cart" onclick="addToCart('校徽徽章', 69)">🛒</button>
+            </div>
+            <div class="card">
+                <img src="./wj.jpg" alt="文具套装" class="card-img">
+                <h3>文具套装</h3>
+                <div class="dimsum-price">¥79</div>
+                <button class="add-to-cart" onclick="addToCart('文具套装', 79)">🛒</button>
+            </div>
+            <div class="card">
+                <img src="./yf.jpg" alt="衣服" class="card-img">
+                <h3>衣服</h3>
+                <div class="dimsum-price">¥499</div>
+                <button class="add-to-cart" onclick="addToCart('衣服', 499)">🛒</button>
+            </div>
+            <div class="card">
+                <img src="./xxgj.jpg" alt="韩国大学挂件" class="card-img">
+                <h3>韩国大学挂件</h3>
+                <div class="dimsum-price">¥109</div>
+                <button class="add-to-cart" onclick="addToCart('韩国大学挂件', 109)">🛒</button>
+            </div>
+            <div class="card">
+                <img src="./hbgj.jpg" alt="滑板挂件" class="card-img">
+                <h3>滑板挂件</h3>
+                <div class="dimsum-price">¥129</div>
+                <button class="add-to-cart" onclick="addToCart('滑板挂件', 129)">🛒</button>
+            </div>
+            <div class="card">
+                <img src="./sq.jpg" alt="书签" class="card-img">
+                <h3>书签</h3>
+                <div class="dimsum-price">¥109</div>
+                <button class="add-to-cart" onclick="addToCart('书签', 109)">🛒</button>
+            </div>
+            <div class="card">
+                <img src="./fd.jpg" alt="发带" class="card-img">
+                <h3>发带</h3>
+                <div class="dimsum-price">¥99</div>
+                <button class="add-to-cart" onclick="addToCart('发带', 99)">🛒</button>
+            </div>
+            <div class="card">
+                <img src="./zykt.jpg" alt="在允卡套" class="card-img">
+                <h3>在允卡套</h3>
+                <div class="dimsum-price">¥119</div>
+                <button class="add-to-cart" onclick="addToCart('在允卡套', 119)">🛒</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>善意的竞争 &copy; 2025 &copy; 黎芷柔</p >
+        <p>电子邮件：3060677004@qq.com</p >
+        <p>地址：***********</p >
+    </footer>
+    <script src="../123.js"></script>
+    <script>
+        // 加入购物车逻辑 - 存储到本地存储
+        function addToCart(name, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${name} 已加入购物车`);
+        }
+    </script>
+</body>
+</html>

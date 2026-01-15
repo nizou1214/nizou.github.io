@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>善意的竞争 - 联系我们</title>
+    <link rel="stylesheet" href="../2.css">
+    <style>
+
+        /* 头部横幅 */
+        .header-banner {
+            background: linear-gradient(90deg, #8c23b8, #ff2e99);
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-banner h1 {
+            font-size: 2rem;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .header-banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10,6,31,0.2);
+        }
+
+        /* 联系信息容器 */
+        .contact-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background-color: #1a123f;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(140,35,184,0.2);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-card i {
+            font-size: 1.8rem;
+            color: #ff9500;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            color: #ff9500;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-card p {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        /* 留言表单 */
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            padding: 0 5%;
+        }
+
+        .form-card {
+            background-color: #1a123f;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(140,35,184,0.2);
+        }
+
+        .form-card h2 {
+            color: #ff9500;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #ccc;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background-color: #281e50;
+            border: 1px solid #452e99;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 0.9rem;
+            resize: vertical;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #ff9500;
+            box-shadow: 0 0 5px rgba(255,149,0,0.3);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(90deg, #ff9500, #ff2e99);
+            border: none;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* 社交图标 */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .social-icons a {
+            color: #ccc;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ff9500;
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #120b2e;
+            color: #eee;
+            margin-top: 40px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: #ff9500;
+            text-decoration: none;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .navbar {
+                gap: 1.5rem;
+                padding: 1rem 3%;
+            }
+
+            .form-card {
+                padding: 2rem;
+            }
+
+            .contact-container {
+                gap: 1.5rem;
+            }
+        }
+    </style>
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="./1.jpg" alt="善意的竞争Logo">
+                <span class="logo-text">善意的竞争</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../sy/sy.html">首页</a ></li>
+                <li><a href="../js/js.html">角色介绍</a ></li>
+                <li><a href="../pd/pd.html">精彩片段</a ></li>
+                <li><a href="../mh/mh.html">幕后花絮</a ></li>
+                <li><a href="../zb/zb.html">周边推荐</a ></li>
+                <li><a href="../../index.html">登录</a ></li>
+                <li><a href="./lx.html">联系我们</a ></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 头部横幅 -->
+    <div class="header-banner">
+        <h1>联系我们</h1>
+    </div>
+
+    <!-- 联系信息 -->
+    <div class="contact-container">
+        <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <h3>电子邮件</h3>
+            <p>3060677004@qq.com</p >
+        </div>
+        <div class="contact-card">
+            <i class="fas fa-phone"></i>
+            <h3>联系电话</h3>
+            <p>+86 123-456-789</p >
+        </div>
+        <div class="contact-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>地址</h3>
+            <p>*************</p >
+        </div>
+    </div>
+
+    <!-- 留言表单 -->
+    <div class="form-container">
+        <div class="form-card">
+            <h2><i class="fas fa-pen"></i> 给我们留言</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">您的姓名</label>
+                    <input type="text" id="name" placeholder="请输入您的姓名" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">电子邮箱</label>
+                    <input type="email" id="email" placeholder="请输入您的邮箱" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">板块</label>
+                    <input type="text" id="subject" placeholder="请输入留言板块" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">留言内容</label>
+                    <textarea id="message" rows="5" placeholder="请输入您想说的话..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">发送留言 <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 社交图标 -->
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-instagram"></i></a >
+        <a href="#"><i class="fab fa-youtube"></i></a >
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>善意的竞争 &copy; 2025 &copy; 黎芷柔</p >
+        <p>电子邮件：3060677004@qq.com</p >
+        <p>地址：***********</p >
+    </footer>
+
+    <script>
+        // 表单提交逻辑
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('留言发送成功！我们会尽快回复您~');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>

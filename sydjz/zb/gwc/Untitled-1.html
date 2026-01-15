@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>罗小黑战记 - 周边推荐</title>
+    <link rel="stylesheet" href="../../2.css">
+    <style>
+        /* 购物车图标样式 */
+        .cart-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: #ff6700;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 99;
+            text-decoration: none;
+        }
+        /* 添加到购物车按钮样式 */
+        .add-to-cart {
+            margin-top: 10px;
+            padding: 6px 12px;
+            background-color: #00a1d6;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .add-to-cart:hover {
+            background-color: #0088cc;
+        }
+    </style>
+</head>
+<body>
+    <!-- 购物车图标 - 跳转购物车页面 -->
+    <a href=" " class="cart-icon">🛒</a >
+
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">罗小黑战记</a >
+            <ul class="nav-list">
+                <li><a href="index.html">首页</a ></li>
+                <li><a href="characters.html">角色介绍</a ></li>
+                <li><a href="plot.html">剧情简介</a ></li>
+                <li><a href="scenes.html">精彩片段</a ></li>
+                <li><a href="merch.html">周边推荐</a ></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="card-container">
+        <div class="card">
+            < img src="images/merch1.jpg" alt="周边1" class="card-img zoom-img">
+            <h3>罗小黑手办</h3>
+            <p>还原动画中的经典造型，做工精致，是收藏的不二之选。</p >
+            <button class="add-to-cart" onclick="addToCart('罗小黑手办', 99)">添加到购物车</button>
+        </div>
+        <div class="card">
+            < img src="images/merch2.jpg" alt="周边2" class="card-img zoom-img">
+            <h3>主题抱枕</h3>
+            <p>柔软舒适，印有可爱的罗小黑图案，陪伴你的每一个夜晚。</p >
+            <button class="add-to-cart" onclick="addToCart('主题抱枕', 59)">添加到购物车</button>
+        </div>
+        <div class="card">
+            < img src="images/merch3.jpg" alt="周边3" class="card-img zoom-img">
+            <h3>联名文具</h3>
+            <p>包含笔记本、笔、贴纸等，实用又好看，适合学生党。</p >
+            <button class="add-to-cart" onclick="addToCart('联名文具', 39)">添加到购物车</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>罗小黑战记静态网页 &copy; 2024</p >
+        <p>治愈系国漫，温暖每一个瞬间</p >
+    </footer>
+
+    <script src="js/zoom.js"></script>
+    <script>
+        // 加入购物车逻辑 - 存储到本地存储
+        function addToCart(name, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${name} 已加入购物车`);
+        }
+    </script>
+</body>
+</html>

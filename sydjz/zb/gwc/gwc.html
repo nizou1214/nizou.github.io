@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>罗小黑战记 - 购物车</title>
+    <link rel="stylesheet" href="../../2.css">
+    <style>
+        .cart-container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #45b5da;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #000000;
+        }
+        .item-info {
+            flex: 2;
+        }
+        .item-price {
+            flex: 1;
+            text-align: center;
+        }
+        .item-quantity {
+            flex: 1;
+            text-align: center;
+        }
+        .item-total {
+            flex: 1;
+            text-align: center;
+        }
+        .cart-total {
+            margin-top: 20px;
+            text-align: right;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .checkout-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff6700;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .checkout-btn:hover {
+            background-color: #e55a00;
+        }
+        .empty-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #999;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .empty-btn:hover {
+            background-color: #666;
+        }
+        .empty-cart {
+            text-align: center;
+            padding: 50px 0;
+            color: #666;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            color: #000000;
+            text-decoration: none;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="../1.jpg" alt="善意的竞争Logo">
+                <span class="logo-text">善意的竞争</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../../sy/sy.html">首页</a ></li>
+                <li><a href="../../js/js.html">角色介绍</a ></li>
+                <li><a href="../../pd/pd.html">精彩片段</a ></li>
+                <li><a href="../../mh/mh.html">幕后花絮</a ></li>
+                <li><a href="../zb.html">周边推荐</a ></li>
+                <li><a href="../../../index.html">登录</a ></li>
+                <li><a href="../../lx/lx.html">联系我们</a ></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="cart-container">
+        <h2>我的购物车</h2>
+        <div id="cart-items">
+            <!-- 购物车商品会通过JS动态生成 -->
+        </div>
+        <div class="cart-total" id="cart-total">总计：¥0.00</div>
+        <!-- 按钮组：清空购物车 + 去结算 -->
+        <div class="btn-group">
+            <button class="empty-btn" id="empty-btn" onclick="emptyCart()" disabled>清空购物车</button>
+            <button class="checkout-btn" id="checkout-btn" onclick="location.href='fk.html'" disabled>去结算</button>
+        </div>
+        <a href="../zb.html" class="back-btn">返回周边商城</a >
+    </div>
+    <footer class="footer">
+        <p>善意的竞争 &copy; 2025 &copy; 黎芷柔</p >
+        <p>电子邮件：3060677004@qq.com</p >
+        <p>地址：***********</p >
+    </footer>
+
+    <script>
+         // 渲染购物车商品
+        function renderCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsEl = document.getElementById('cart-items');
+            const cartTotalEl = document.getElementById('cart-total');
+            const checkoutBtn = document.getElementById('checkout-btn');
+            const emptyBtn = document.getElementById('empty-btn');
+            
+            if (cart.length === 0) {
+                cartItemsEl.innerHTML = '<div class="empty-cart">购物车是空的哦~</div>';
+                cartTotalEl.textContent = '总计：¥0.00';
+                checkoutBtn.disabled = true;
+                emptyBtn.disabled = true; // 购物车为空时禁用清空按钮
+                return;
+            }
+            let total = 0;
+            cartItemsEl.innerHTML = '';
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                const itemEl = document.createElement('div');
+                itemEl.className = 'cart-item';
+                itemEl.innerHTML = `
+                    <div class="item-info">${item.name}</div>
+                    <div class="item-price">¥${item.price}</div>
+                    <div class="item-quantity">${item.quantity}件</div>
+                    <div class="item-total">¥${itemTotal}</div>
+                `;
+                cartItemsEl.appendChild(itemEl);
+            });
+            cartTotalEl.textContent = `总计：¥${total.toFixed(2)}`;
+            checkoutBtn.disabled = false;
+            emptyBtn.disabled = false; // 购物车有商品时启用清空按钮
+        }
+
+        // 清空购物车函数
+        function emptyCart() {
+            if (confirm('确定要清空购物车吗？')) {
+                localStorage.removeItem('cart');
+                renderCart(); // 重新渲染购物车
+            }
+        }
+
+        // 页面加载时渲染购物车
+        window.onload = renderCart;
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>罗小黑战记 - 付款页面</title>
+    <link rel="stylesheet" href="../../2.css">
+    <style>
+        .payment-container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #45b5da;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .payment-method {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #000000;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .payment-method.active {
+            border-color: #000000;
+            background-color: #5e3df0;
+        }
+        .pay-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff6700;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .pay-btn:hover {
+            background-color: #e55a00;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="../1.jpg" alt="善意的竞争Logo">
+                <span class="logo-text">善意的竞争</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../../sy/sy.html">首页</a ></li>
+                <li><a href="../../js/js.html">角色介绍</a ></li>
+                <li><a href="../../pd/pd.html">精彩片段</a ></li>
+                <li><a href="../../mh/mh.html">幕后花絮</a ></li>
+                <li><a href="../zb.html">周边推荐</a ></li>
+                <li><a href="../../../index.html">登录</a ></li>
+                <li><a href="../../lx/lx.html">联系我们</a ></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="payment-container">
+        <h2>选择支付方式</h2>
+        <div class="payment-method active" onclick="selectPayment(this)">
+            <p>支付宝支付</p >
+        </div>
+        <div class="payment-method" onclick="selectPayment(this)">
+            <p>微信支付</p >
+        </div>
+        <div class="payment-method" onclick="selectPayment(this)">
+            <p>银行卡支付</p >
+        </div>
+        <button class="pay-btn" onclick="completePayment()">确认付款</button>
+    </div>
+
+    <footer class="footer">
+        <p>善意的竞争 &copy; 2025 &copy; 黎芷柔</p >
+        <p>电子邮件：3060677004@qq.com</p >
+        <p>地址：***********</p >
+    </footer>
+
+    <script>
+        // 选择支付方式
+        function selectPayment(el) {
+            document.querySelectorAll('.payment-method').forEach(item => {
+                item.classList.remove('active');
+            });
+            el.classList.add('active');
+        }
+
+        // 完成付款 - 清空购物车并跳转提示页
+        function completePayment() {
+            localStorage.removeItem('cart');
+            alert('付款成功！感谢你的购买~');
+            location.href = '../zb.html';
+        }
+    </script>
+</body>
+</html>
